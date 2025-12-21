@@ -29,3 +29,4 @@ object => collection of key value pairs (more complex data structure)
 
 console.log(typeof undefined); // undefined
 console.log(typeof null); // object (this is a bug in JS, null is not an object)
+ 

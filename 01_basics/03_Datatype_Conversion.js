@@ -45,3 +45,23 @@ undefined => "undefined"
 NaN => "NaN"
 
 */
+
+
+//*************Operations in JavaScript***
+
+let value = 100;
+let negValue = -value;
+console.log(negValue); // -100
+
+
+let str1 = "Hello ";
+let str2 = "World";
+let str3 = str1 + str2;
+console.log(str3); // Hello World
+
+console.log("1"+2+2);// "122"
+console.log(1+2+"2");// "32"
+// + operator is left to right associative 
+
+console.log("5"-2);// 3
+// - , * , / operators always treat operands as numbers
