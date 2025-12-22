@@ -1,4 +1,112 @@
-// Q. what is difference between Const and var;
+
+
+### 1. Difference between `const` and `var`
+- **`var`**: Function-scoped, can be redeclared and updated. Hoisted with `undefined` as default.
+- **`const`**: Block-scoped, must be initialized at declaration, cannot be reassigned (though objects/arrays can be mutated).
+
+---
+
+### 2. Role of JavaScript in Full Stack Development (FSD)
+- JavaScript is the **core language** for both client-side and server-side development.
+- **Frontend**: Used with frameworks like React, Angular, Vue for interactive UIs.
+- **Backend**: With Node.js, it powers servers, APIs, and handles databases.
+- **Full Stack**: Enables developers to use a single language across the stack, improving efficiency and consistency.
+
+---
+
+### 3. What is Hoisting in JS
+- Hoisting is JavaScript’s default behavior of moving **declarations** to the top of their scope before execution.
+- Example: `var` and function declarations are hoisted, but `let` and `const` are hoisted without initialization (temporal dead zone).
+
+---
+
+### 4. Data Types in JS
+- **Primitive types**: String, Number, Boolean, Null, Undefined, Symbol, BigInt.
+- **Non-primitive**: Objects (including Arrays, Functions, Dates, etc.).
+
+---
+
+### 5. What is DOM and Accessing Methods
+- **DOM (Document Object Model)**: A programming interface that represents HTML/XML documents as a tree structure.
+- **Access methods**:
+  - `getElementById()`
+  - `getElementsByClassName()`
+  - `getElementsByTagName()`
+  - `querySelector()`
+  - `querySelectorAll()`
+
+---
+
+### 6. Arrow Function
+- A shorter syntax for writing functions:  
+  ```js
+  const add = (a, b) => a + b;
+  ```
+- Benefits: concise, does not bind its own `this`, useful in callbacks.
+
+---
+
+### 7. Object in JS
+- An object is a collection of **key-value pairs**.
+- Keys are strings (or Symbols), values can be any data type.
+- Example:  
+  ```js
+  const person = { name: "Abhishek", age: 22 };
+  ```
+
+---
+
+### 8. Sync vs Async in JS
+- **Synchronous**: Code executes line by line, blocking further execution until the current task finishes.
+- **Asynchronous**: Code executes without blocking, allowing tasks like API calls, timers, or file reads to run in the background.
+
+---
+
+### 9. Event in JS
+- An **event** is an action or occurrence (like a click, keypress, or page load) that can be handled with event listeners.
+- Example:  
+  ```js
+  document.addEventListener("click", () => console.log("Clicked!"));
+  ```
+
+---
+
+### 10. Callback Function
+- A function passed as an argument to another function, executed later.
+- Example:  
+  ```js
+  setTimeout(() => console.log("Hello"), 1000);
+  ```
+
+---
+
+### 11. Callback Hell
+- When multiple callbacks are nested inside each other, making code hard to read and maintain.
+- Example:  
+  ```js
+  doSomething(() => {
+    doSomethingElse(() => {
+      doAnotherThing(() => {
+        // deeply nested
+      });
+    });
+  });
+  ```
+- **Solution**: Use Promises or `async/await`.
+
+---
+
+### 12. Difference between `null` and `undefined`
+- **`null`**: Explicitly set by the programmer to represent “no value.”
+- **`undefined`**: Default value of variables that are declared but not initialized.
+
+---
+
+
+
+  ..................................................................................................................................................................
+
+  // Q. what is difference between Const and var;
 Answer: var, let, and const are used to declare variables in JavaScript.
 var is function-scoped, allows redeclaration, and can cause bugs, so it is generally avoided.
 let is block-scoped and allows reassignment but not redeclaration.
@@ -64,5 +172,9 @@ what is Sync and Async in JS
 what is event in JS
 what is call back function
 explainn the concept of call back hell
+what is the difference between null and undefined;
 
 
+
+
+..................................................................................................................................................................
