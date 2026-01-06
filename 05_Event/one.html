@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Makes the page responsive on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+
+    <!-- Container -->
+    <div>
+        <!-- UL that contains all images -->
+        <ul id="images">
+            <!-- Each image is inside an LI -->
+            <li>
+                <img width="200px" id="photoshop"
+                     src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg"
+                     alt="photoshop">
+            </li>
+
+            <li>
+                <img width="200px" id="japan"
+                     src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg"
+                     alt="">
+            </li>
+
+            <li>
+                <img width="200px" id="river"
+                     src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg"
+                     alt="">
+            </li>
+
+            <li>
+                <img width="200px" id="owl"
+                     src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg"
+                     alt="">
+            </li>
+
+            <li>
+                <img width="200px" id="prayer"
+                     src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg"
+                     alt="">
+            </li>
+
+            <!-- Anchor tag -->
+            <li>
+                <a style="color: aliceblue;" href="https://google.com" id="google">Google</a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    /* ===============================
+       BASIC EVENT EXAMPLE (OLD WAY)
+       =============================== */
+
+    // document.getElementById('owl').onclick = function () {
+    //     alert("owl clicked")
+    // }
+    // ❌ Not recommended (overwrites events)
+
+
+    /* ===============================
+       MODERN EVENT LISTENER
+       =============================== */
+
+    // addEventListener(type, callback, useCapture)
+    // type → "click"
+    // callback → function to execute
+    // useCapture → false (default = bubbling phase)  bubbling goest bottom to top
+    // true- capturing, top to bottom
+
+
+    /* ===============================
+       EVENT OBJECT (e)
+       =============================== */
+    // e contains details about the event:
+    // e.type              → click
+    // e.target            → element that was clicked
+    // e.currentTarget     → element on which event listener is attached
+    // e.preventDefault()  → stops default behavior (like link redirect)
+    // e.stopPropagation() → stops bubbling
+
+
+    /* ===============================
+       EVENT BUBBLING EXAMPLE
+       =============================== */
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("Clicked inside UL");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("Owl clicked");
+    //     e.stopPropagation(); // stops bubbling to UL
+    // }, false)
+
+
+    /* ===============================
+       PREVENT DEFAULT ACTION
+       =============================== */
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault();     // stops redirect to Google
+    //     e.stopPropagation();    // stops bubbling
+    //     console.log("Google link clicked");
+    // }, false)
+
+
+    /* ===============================
+       EVENT DELEGATION (IMPORTANT)
+       =============================== */
+
+    // Instead of adding event to every image,
+    // we add ONE event to the parent (UL)
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+
+        // Logs which tag was clicked (IMG / A / LI)
+        console.log(e.target.tagName);
+
+        // Check if the clicked element is an IMAGE
+        if (e.target.tagName === 'IMG') {
+
+            // Log the id of the clicked image
+            console.log(e.target.id);
+
+            // parentNode = <li> of the image
+            let removeIt = e.target.parentNode;
+
+            // Removes the entire <li> from DOM
+            removeIt.remove();
+        }
+    });
+
+    /* ===============================
+       OLD REMOVE METHOD (OPTIONAL)
+       =============================== */
+    // removeIt.parentNode.removeChild(removeIt);
+
+</script>
+</html>

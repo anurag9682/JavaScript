@@ -21,8 +21,10 @@
  map.set('Fr', "France")
  map.set("IB", "India");
 
-for (const [key,value] of map) {
-  console.log(value);
+for (const [key,value] of map) { // we v
+  console.log(value);  
+  co
+  
   
   
 }
